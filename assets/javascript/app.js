@@ -21,6 +21,18 @@ function createButtons() {
         $('.buttonsView').append(btn);  
     }
 }
+
+// Event: addCharacter button
+$('addCharacter').on('click', function(){
+    // Grabs user's input
+    var character = $('.characterInput').val().trim();
+    // User's input is added to the characters array
+    characters.push(character);
+    // Calling line 12 fx
+    createButtons();
+    // If users hit enter instead of clicking the button
+    return false;
+})
 // dynamically add five buttons to HTML
 
 // each button has the name of a different Arrested Development character
