@@ -60,11 +60,20 @@ function displayGIFs(){
             $('.addCharacters');
         };
     });
-};
+}
 // each GIF displays its rating (e.g., "G," "PG," etc.) above it
 
 // click on GIF, it animates
-
+$(document).on('click', '.gif', function() {
+    var state = $(this).attr('data-state');
+        if (state === 'still') {
+            $(this).attr('src', $(this).data('animate'));
+            $(this).attr('data-state', 'animate');
+        } else {
+            $(this).attr('src', $(this).data('still'));
+            $(this).attr('data-state', 'still');
+        };
+});
 // click again, it stops
 
 // Type another Arrested Development word or character into text box, adds button to list above
