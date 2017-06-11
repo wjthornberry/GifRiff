@@ -1,10 +1,60 @@
-* {
+html {
+    height: 100%;
     box-sizing: border-box;
 }
 
 /* Page */
 body {
     position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #24292E;
+    color: snow;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+a {
+    color: snow;
+}
+
+/*a {
+    border: white;
+}*/
+
+/*.a-footer {
+    color: snow;
+}*/
+
+/*.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}*/
