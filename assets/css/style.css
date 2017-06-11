@@ -8,6 +8,7 @@ body {
     position: relative;
     margin: 0;
     padding-bottom: 6rem;
+    padding-top: 6rem;
     min-height: 100%;
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -39,6 +40,14 @@ main {
 
 a {
     color: snow;
+}
+
+.center {
+    text-align: center; 
+}
+
+.btn {
+    margin: 5px;
 }
 
 /*a {
