@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Page */
+body {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
