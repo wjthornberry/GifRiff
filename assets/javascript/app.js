@@ -1,12 +1,13 @@
-// set up variables, var authKey, var queryTerm empty
+// set up variables
 var authKey = "dc6zaTOxFJmzC";
 var searchTerm = "";
+var characters = ["Gangy", "George Michael", "Michael", "Tobias", "GOB"]
 
 // search parameters
 
 // API URL
 
-var queryURLBase = "http://api.giphy.com/v1/gifs/search?q="
+var queryURLBase = "http://api.giphy.com/v1/gifs/search?q=" + character + "limit=10&" + authKey;
 
 // dynamically add five buttons to HTML
 
