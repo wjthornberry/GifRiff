@@ -3,12 +3,24 @@ var authKey = "dc6zaTOxFJmzC";
 var searchTerm = "";
 var characters = ["Gangy", "George Michael", "Michael", "Tobias", "GOB"]
 
-// search parameters
+// GIPHY API URL and search parameters
+var queryURLBase = "http://api.giphy.com/v1/gifs/search?q=" + character + "&limit=10&" + authKey;
 
-// API URL
+// Functions
 
-var queryURLBase = "http://api.giphy.com/v1/gifs/search?q=" + character + "limit=10&" + authKey;
-
+// Creates default buttons when page loads
+function createButtons() {
+    // Remove characters  before adding new ones; no repeat buttons
+    $('.buttonsView').empty;
+    for (var i = 0; i < characters.length; i++) {
+        // Dynamically adds buttons to the DOM for every character in the "characters" array above
+        var btn = ('<button');
+        btn.addClass('character');
+        btn.attr('data-name', characters[i]);
+        btn.text(characters[i]);
+        $('.buttonsView').append(btn);  
+    }
+}
 // dynamically add five buttons to HTML
 
 // each button has the name of a different Arrested Development character
