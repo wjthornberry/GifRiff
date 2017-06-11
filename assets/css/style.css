@@ -46,6 +46,12 @@ a {
     text-align: center; 
 }
 
+/* Buttons */
+
 .btn {
     margin: 5px;
+}
+
+.btn:hover {
+    color: blue;
 }
