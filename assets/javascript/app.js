@@ -1,8 +1,14 @@
+// set up variables, var authKey, var queryTerm empty
+
+// search parameters
+
+// API URL
+
 // dynamically add five buttons to HTML
 
 // each button has the name of a different Arrested Development character
 
-// click on button, nine GIFs related to that button are displayed
+// click on button, nine GIFs related to that button are displayed via AJAX call
 
 // each GIF displays its rating (e.g., "G," "PG," etc.) above it
 
@@ -11,3 +17,5 @@
 // click again, it stops
 
 // Type another Arrested Development word or character into text box, adds button to list above
+
+// Functions: AJAX; Search btn on click
