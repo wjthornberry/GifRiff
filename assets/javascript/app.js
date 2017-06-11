@@ -1,8 +1,12 @@
 // set up variables, var authKey, var queryTerm empty
+var authKey = "dc6zaTOxFJmzC";
+var searchTerm = "";
 
 // search parameters
 
 // API URL
+
+var queryURLBase = "http://api.giphy.com/v1/gifs/search?q="
 
 // dynamically add five buttons to HTML
 
