@@ -14,15 +14,18 @@
 </head>
 <body>
     <div class="container main">
-        <div class="buttonsView">
+        <!--GIFs will get dumped here-->
+        <div id="buttons-view">
         </div>
        
+       <!--Rendered buttons will get dumped here-->
         <div class="characterForm center">
-            <form class="characterForm">
-                <label for="characterInput">Add Character GIF</label>
-                <input type="text" class="characterInput"><br>
+            <form id="character-form">
+                <label for="character-input">Add Character GIF</label>
+                <input type="text" id="character-input"><br>
             
-            <input class="addCharacter btn" type="submit" value="Submit">
+            <!--Button triggers new GIF to be added-->
+            <input id="add-character" type="submit" value="Add another character">
         </form>
         
         <div class="addCharacter">
