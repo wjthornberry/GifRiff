@@ -36,7 +36,7 @@ $('#add-character').on('click', function(event) {
 });
 
 function displayGIF() {
-    var character = $(this).attr("data-name");
+    var character = $(this).attr('data-name');
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&limit=10&api_key=dc6zaTOxFJmzC";
 
     // Calls AJAX
@@ -44,7 +44,7 @@ function displayGIF() {
         url: queryURL,
         method: "GET"
     }).done(function(response){
-        console.log(response.data);
+        console.log(response.data[i]);
 
         var results = response.data;
 
