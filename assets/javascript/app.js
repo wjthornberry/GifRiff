@@ -44,7 +44,7 @@ function displayGif() {
         url: queryURL,
         method: "GET"
     }).done(function(response){
-        console.log(response.data[i]);
+        console.log(response.data);
 
         var results = response.data;
 
