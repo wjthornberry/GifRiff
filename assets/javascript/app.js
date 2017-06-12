@@ -1,5 +1,5 @@
 // Initial array of characters
-var characters = ["Gangy", "George Michael", "Michael", "Tobias", "GOB"];
+var characters = ["Gangy Arrested Development", "George Michael Arrested Development", "Michael Arrested Development", "Tobias Arrested Development", "GOB Arrested Development"];
 
 // Functions
 

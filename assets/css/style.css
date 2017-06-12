@@ -74,18 +74,21 @@ button:hover {
 
 .submit-button:hover {
     background-color: #F57921;
-    margin: 10px;
 }
 
 /*GIFs*/
 
 .gifs {
+    display: inline;
+}
+
+.gif {
 	display: inline;
+    margin: 10px;
 }
 
 #gifsView {
 	display: inline;
-	margin-bottom: 40px;
 }
 
 
