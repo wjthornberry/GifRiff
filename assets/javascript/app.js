@@ -1,42 +1,43 @@
-// set up variables
-var authKey = "dc6zaTOxFJmzC";
-var searchTerm = "";
-var characters = ["Gangy", "George Michael", "Michael", "Tobias", "GOB"]
-
-// GIPHY API URL and search parameters
-var queryURLBase = "http://api.giphy.com/v1/gifs/search?q=" + character + "&limit=10&" + authKey;
+// Initial array of characters
+var characters = ["Gangy", "George Michael", "Michael", "Tobias", "GOB"];
 
 // Functions
 
-// Creates default buttons when page loads
+// createButtons default buttons when page loads
 function createButtons() {
     // Remove characters  before adding new ones; no repeat buttons
-    $('.buttonsView').empty;
+    $("#buttons-view").empty();
+    // Loops through the array of characters
     for (var i = 0; i < characters.length; i++) {
-        // Dynamically adds buttons to the DOM for every character in the "characters" array above
-        var btn = ('<button');
-        btn.addClass('character');
-        btn.attr('data-name', characters[i]);
-        btn.text(characters[i]);
-        $('.buttonsView').append(btn);  
+        // Dynamically generates buttons for each character in the array
+        var a = ("<button>");
+        // Adds class of character to button
+        a.addClass("ad-character");
+        // Adds a data-attribute
+        a.attr("data-name", characters[i]);
+        // Provides the inital button text
+        a.text(characters[i]);
+        // Adds the button to the buttons-view div
+        $("#buttons-view").append(a);  
     }
 }
 
-// Event: addCharacter button
-$('addCharacter').on('click', function(){
-    // Grabs user's input
-    var character = $('.characterInput').val().trim();
+// This function handles events where a character button is clicked
+$('#add-character').on('click', function(event) {
+    event.preventDefault();
+    // Grabs user's input from the text box
+    var character = $('#character-input').val().trim();
     // User's input is added to the characters array
     characters.push(character);
-    // Calling line 12 fx
+    // Calling createButtons which handles the processing of the character array
     createButtons();
-    // If users hit enter instead of clicking the button
+    // This allows user to hit the "enter" key instead of clicking the button
     return false;
-})
+});
 
-// click on button, ten GIFs related to that button are displayed via AJAX call
-function displayGIFs(){
-    var character = $(this).attr('data-name');
+function displayGIF() {
+    var character = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&limit=10&api_key=dc6zaTOxFJmzC";
 
     // Calls AJAX
     $.ajax({
@@ -61,9 +62,8 @@ function displayGIFs(){
         };
     });
 }
-// each GIF displays its rating (e.g., "G," "PG," etc.) above it
 
-// click on GIF, it animates
+// Click on GIF to animate
 $(document).on('click', '.gif', function() {
     var state = $(this).attr('data-state');
         if (state === 'still') {
@@ -74,8 +74,9 @@ $(document).on('click', '.gif', function() {
             $(this).attr('data-state', 'still');
         };
 });
-// click again, it stops
 
-// Type another Arrested Development word or character into text box, adds button to list above
+// Display character GIFs
+$(document).on('click', ".character", displayGIF);
 
-// Functions: AJAX; Search btn on click
+// Calls the createButtons function
+createButtons();
