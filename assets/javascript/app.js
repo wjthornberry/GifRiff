@@ -6,24 +6,24 @@ var characters = ["Gangy", "George Michael", "Michael", "Tobias", "GOB"];
 // createButtons default buttons when page loads
 function createButtons(){
     // Remove characters  before adding new ones; no repeat buttons
-    $("#buttons-view").empty();
+    $("#buttonsView").empty();
     // Loops through the array of characters
     for (var i = 0; i < characters.length; i++) {
         // Dynamically generates buttons for each character in the array
         var a = $('<button>');
         // Adds class of character to button
-        a.addClass('ad-character');
+        a.addClass('character');
         // Adds a data-attribute
         a.attr('data-name', characters[i]);
         // Provides the inital button text
         a.text(characters[i]);
         // Adds the button to the buttons-view div
-        $('#buttons-view').append(a);  
+        $('#buttonsView').append(a);  
     }
 }
 
 // This function handles events where a character button is clicked
-$('#add-character').on('click', function(event) {
+$('#addCharacter').on('click', function(event) {
     event.preventDefault();
     // Grabs user's input from the text box
     var character = $('#character-input').val().trim();
@@ -35,7 +35,7 @@ $('#add-character').on('click', function(event) {
     return false;
 });
 
-function displayGIF() {
+function displayGif() {
     var character = $(this).attr('data-name');
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&limit=10&api_key=dc6zaTOxFJmzC";
 
@@ -48,17 +48,17 @@ function displayGIF() {
 
         var results = response.data;
 
-        for (var i = 0; results.length; i++) {
-            var gifDiv = $('<div class=GIFs>');
-            var characterGIF = $('<img>');
-                characterGIF.attr('src', results[i].images.fixed_heigh_still.url);
-                characterGIF.attr('title', "Rating: " + results[i].rating);
-                characterGIF.attr('data-still', results[i].images.fixed_height_still.url);
-                characterGIF.attr('data-state', 'still');
-                characterGIF.addClass('gif');
-                characterGIF.attr('data-animate', results[i].images.fixed_heigh.url);
-            gifDiv.append(characterGIF);
-            $('.addCharacters');
+        for (var i = 0; i < results.length; i++) {
+            var gifDiv = $('<div class=gifs>');
+            var characterGif = $('<img>');
+                characterGif.attr('src', results[i].images.fixed_height_still.url);
+                characterGif.attr('title', "Rating: " + results[i].rating);
+                characterGif.attr('data-still', results[i].images.fixed_height_still.url);
+                characterGif.attr('data-state', 'still');
+                characterGif.addClass('gif');
+                characterGif.attr('data-animate', results[i].images.fixed_height.url);
+            gifDiv.append(characterGif);
+            $('#gifsView').prepend(gifDiv);
         };
     });
 }
@@ -76,7 +76,7 @@ $(document).on('click', '.gif', function() {
 });
 
 // Display character GIFs
-$(document).on('click', ".character", displayGIF);
+$(document).on('click', '.character', displayGif);
 
 // Calls the createButtons function
 createButtons();
