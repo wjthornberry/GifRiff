@@ -4,21 +4,21 @@ var characters = ["Gangy", "George Michael", "Michael", "Tobias", "GOB"];
 // Functions
 
 // createButtons default buttons when page loads
-function createButtons() {
+function createButtons(){
     // Remove characters  before adding new ones; no repeat buttons
     $("#buttons-view").empty();
     // Loops through the array of characters
     for (var i = 0; i < characters.length; i++) {
         // Dynamically generates buttons for each character in the array
-        var a = ("<button>");
+        var a = $('<button>');
         // Adds class of character to button
-        a.addClass("ad-character");
+        a.addClass('ad-character');
         // Adds a data-attribute
-        a.attr("data-name", characters[i]);
+        a.attr('data-name', characters[i]);
         // Provides the inital button text
         a.text(characters[i]);
         // Adds the button to the buttons-view div
-        $("#buttons-view").append(a);  
+        $('#buttons-view').append(a);  
     }
 }
 
